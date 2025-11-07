@@ -1,6 +1,7 @@
 package mthree.com.fullstackschool.service;
 
 import mthree.com.fullstackschool.dao.CourseDao;
+import mthree.com.fullstackschool.dao.CourseDaoImpl;
 import mthree.com.fullstackschool.model.Course;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.DataAccessException;
@@ -11,7 +12,12 @@ import java.util.List;
 public class CourseServiceImpl implements CourseServiceInterface {
 
     //YOUR CODE STARTS HERE
+    private final CourseDao courseDao;
 
+    @Autowired
+    public CourseServiceImpl(CourseDao courseDao) {
+        this.courseDao = courseDao;
+    }
 
 
     //YOUR CODE ENDS HERE
